@@ -28,7 +28,23 @@ function create(req, res) {
       })
 }
 
+function show(req, res) {
+    Lead.findById(req.params.id)
+    .populate('owner')
+    .then(lead => {
+        res.render('leads/show', {
+            lead,
+            title: 'Show Lead'
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/leads")
+      })
+}
+
 export {
     index,
-    create
+    create,
+    show
 }

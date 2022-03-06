@@ -6,6 +6,8 @@ const router = Router()
 
 // GET - localhost:3000/leads
 router.get('/', leadsCtrl.index)
+// GET - localhost:3000/leads/:id
+router.get('/leads/:id', leadsCtrl.show)
 
 // POST - localhost:3000/leads
 router.post('/', isLoggedIn, leadsCtrl.create)
