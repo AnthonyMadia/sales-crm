@@ -7,6 +7,7 @@ const leadSchema = new Schema({
     email: String,
     lead: Boolean,
     linkedin: String,
+    lastTouch: Date,
     notes: String,
     owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 })

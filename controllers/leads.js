@@ -16,7 +16,16 @@ function index(req, res) {
 }
 
 function createLead(req, res) {
-    console.log('hey')
+    req.body.owner = req.user.profile._id
+    req.body.lead = !!req.body.lead
+    Lead.create(req.body)
+    .then(lead => {
+        res.redirect('/leads')
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/leads")
+      })
 }
 
 export {
