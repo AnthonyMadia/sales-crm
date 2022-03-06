@@ -32,6 +32,7 @@ function show(req, res) {
     Lead.findById(req.params.id)
     .populate('owner')
     .then(lead => {
+    console.log("🚀 ~ lead", lead);
         res.render('leads/show', {
             lead,
             title: 'Show Lead'

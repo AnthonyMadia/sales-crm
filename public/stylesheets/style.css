@@ -127,6 +127,19 @@ form {
   margin: auto;
 }
 
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
+.card-lead {
+  font-size: 40px;
+}
+
+
 /* Dropdown Button */
 .dropbtn {
   background-color: #04AA6D;
