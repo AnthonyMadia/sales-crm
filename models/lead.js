@@ -7,6 +7,9 @@ const leadSchema = new Schema({
         type: String,
         required: true
     },
+    phone: {
+        type: Number,
+    },
     email: String,
     lead: {
         type: Boolean,

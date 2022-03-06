@@ -59,9 +59,14 @@ function flipStatus(req, res) {
       })
 }
 
+function edit(req, res) {
+    console.log('hello there edit page')
+}
+
 export {
     index,
     create,
     show,
-    flipStatus
+    flipStatus,
+    edit
 }

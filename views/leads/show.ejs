@@ -1,18 +1,17 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-
-
 <section>
     <div class="card text-white bg-primary mb-3" style="max-width: 35rem;">
       <div class="card-header" id="card-lead"><%= lead.name %></div>
       <div class="card-body">
-        <h5 class="card-title">Lead created by <%= lead.owner.name %></h5>
-        <p class="card-text">📧 eMail: <%= lead.email %></p>
-        <p class="card-text">LinkedIn: <a href="https://www.linkedin.com/in/<%= lead.linkedin %> "><%= lead.linkedin %></a></p>
-        <p class="card-text">🚦 Lead Status: <%= lead.lead ? "is a lead 👍" : "is not a lead 👎" %></p>
-        <p class="card-text">Last Touch: <%= lead.lastTouch %></p>
-        <p class="card-text">✍️ Notes: <%= lead.notes %></p>
+        <h5 class="card-title">Lead created by <strong><%= lead.owner.name %>  </strong><i class="fa-solid fa-check"></i></h5>
+        <p class="card-text"><i class="fa-solid fa-phone"></i> Phone: <%= lead.phone %></p>
+        <p class="card-text"><i class="fa-solid fa-at"></i> eMail: <%= lead.email %></p>
+        <p class="card-text"><i class="fa-solid fa-location-crosshairs"></i> Lead Status: <%= lead.lead ? "is a lead 👍" : "is not a lead 👎" %></p>
+        <p class="card-text"><i class="fa-brands fa-linkedin"></i>  LinkedIn: <a href="https://www.linkedin.com/in/<%= lead.linkedin %> "><%= lead.linkedin %></a></p>
+        <p class="card-text"><i class="fa-solid fa-calendar-week"></i> Last Touch: <%= lead.lastTouch %></p>
+        <p class="card-text"><i class="fa-solid fa-note-sticky"></i> Notes: <%= lead.notes %></p>
       </div>
     </div>
     <% if (user) { %>
@@ -21,12 +20,19 @@
         method="POST"
       >
         <button class="btn btn-warning" type="submit">
+          <i class="fa-solid fa-person"></i>
           Change Lead Status
         </button>
       </form>
     <% } %>
+    <% if (lead.owner.equals(user?.profile._id)) { %>
+      <form 
+        action="/leads/<%= lead._id %>/edit" 
+        method="GET"
+      >
+        <button class="btn btn-danger">Edit Lead</button>
+      </form>
+    <% } %>
 </section>
-
-
 
 <%- include('../partials/footer') %>

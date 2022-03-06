@@ -4,32 +4,45 @@
 <section>
     <% if (user) { %>
         <h2>Add Lead</h2>
-     <form class="card text-white bg-success mb-3" style="max-width: 35rem;" action="/leads" method="POST">
+     <form class="card text-white bg-success mb-3" style="max-width: 35rem;" action="/leads" method="POST" autocomplete="off">
          <label class="card-header">
-             Name: 
-             <input type="text" name="name" autocomplete="off">
+            <i class="fa-solid fa-file-signature"></i>
+            Name:
+             <input type="text" name="name" >
             </label>
          <label class="card-header">
-             Email: 
+            <i class="fa-solid fa-phone"></i>
+            Phone: 
+             <input type="tel" id="phone" name="phone"
+             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+             name="phone" maxlength="13">
+            </label>
+         <label class="card-header">
+            <i class="fa-solid fa-at"></i>
+            eMail:
              <input type="email" name="email">
             </label>
          <label class="card-header">
+            <i class="fa-solid fa-location-crosshairs"></i>
              Lead Status: 
              <input type="checkbox" name="lead">
             </label>
-            <label class="card-header">  
-             Linkedin:
-             <input type="text" name="linkedin">
-            </label>
-            <label class="card-header">
-                Last Touch: 
-                <input type="date" name="date">
-            </label>
-            <label class="card-header">
-                Notes: 
-                <textarea class="card-body" name="notes" cols="30" rows="3"></textarea>
-            </label>
-            <button class="btn btn-danger">Add Lead </button>
+        <label class="card-header">
+            <i class="fa-brands fa-linkedin"></i>  
+            Linkedin:
+            <input  type="text" name="linkedin">
+        </label>
+        <label class="card-header">
+            <i class="fa-solid fa-calendar-week"></i>
+            Last Touch: 
+            <input type="date" name="date">
+        </label>
+        <label class="card-header">
+            <i class="fa-solid fa-note-sticky"></i>
+          Notes:
+            <textarea class="card-body" name="notes" cols="30" rows="3"></textarea>
+        </label>
+        <button class="btn btn-danger">Add Lead </button>
         </form>
     <% } %>
     <h1>Leads! 🗣️</h1>
