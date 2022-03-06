@@ -3,45 +3,76 @@
 
 <section>
     <h1>Edit Lead</h1>
-    <form class="card text-white bg-success mb-3" style="max-width: 35rem;" action="/leads" method="POST" autocomplete="off">
+    <form class="card text-white bg-success mb-3" style="max-width: 35rem;" action="/leads/<%= lead._id %>?_method=PUT" method="POST" autocomplete="off">
         <label class="card-header">
             <i class="fa-solid fa-file-signature"></i>
             Name:
-            <input type="text" name="name" >
+            <input 
+                type="text" 
+                name="name" 
+                value="<%= lead.name %>"
+            >
             </label>
         <label class="card-header">
             <i class="fa-solid fa-phone"></i>
             Phone: 
-            <input type="tel" id="phone" name="phone"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-            name="phone" maxlength="13">
+            <input 
+                type="tel" 
+                id="phone" 
+                name="phone"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                name="phone" 
+                maxlength="13"
+                value="<%= lead.phone %>"
+            >
             </label>
         <label class="card-header">
             <i class="fa-solid fa-at"></i>
             eMail:
-            <input type="email" name="email">
+            <input 
+                type="email" 
+                name="email"
+                value="<%= lead.email %>"
+            >
             </label>
         <label class="card-header">
             <i class="fa-solid fa-location-crosshairs"></i>
             Lead Status: 
-            <input type="checkbox" name="lead">
+            <input 
+                type="checkbox" 
+                name="lead"
+                value="<%= lead.lead ? "checked" : "" %> "
+            >
             </label>
         <label class="card-header">
             <i class="fa-brands fa-linkedin"></i>  
             Linkedin:
-            <input  type="text" name="linkedin">
+            <input  
+                type="text" 
+                name="linkedin"
+                value="<%= lead.linkedin %> "
+            >
         </label>
         <label class="card-header">
             <i class="fa-solid fa-calendar-week"></i>
             Last Touch: 
-            <input type="date" name="date">
+            <input 
+                type="date" 
+                name="date"
+                value="<%= lead.lastTouch %> "
+            >
         </label>
         <label class="card-header">
             <i class="fa-solid fa-note-sticky"></i>
         Notes:
-            <textarea class="card-body" name="notes" cols="30" rows="3"></textarea>
+            <textarea 
+                class="card-body" 
+                name="notes" 
+                cols="30" 
+                rows="3"
+            ><%= lead.notes %></textarea>
         </label>
-        <button class="btn btn-danger">Add Lead </button>
+        <button type="submit" class="btn btn-danger">Edit Lead</button>
     </form>
 </section>
 

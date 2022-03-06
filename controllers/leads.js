@@ -32,7 +32,6 @@ function show(req, res) {
     Lead.findById(req.params.id)
     .populate('owner')
     .then(lead => {
-    console.log("🚀 ~ lead", lead);
         res.render('leads/show', {
             lead,
             title: 'Show Lead'
@@ -73,10 +72,30 @@ function edit(req, res) {
       })
 }
 
+function update(req, res) {
+    Lead.findById(req.params.id)
+    .then(lead => {
+      if (lead.owner.equals(req.user.profile._id)) {
+        req.body.lead = !!req.body.lead
+        lead.updateOne(req.body, {new: true})
+        .then(()=> {
+          res.redirect(`/leads/${req.params.id}`)
+        })
+      } else {
+        throw new Error ('🚫 Not authorized 🚫')
+      }
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/leads`)
+    })
+  }
+
 export {
     index,
     create,
     show,
     flipStatus,
-    edit
+    edit,
+    update
 }
