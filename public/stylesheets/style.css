@@ -133,9 +133,10 @@ form {
   align-items: center;
   text-align: center;
   margin: auto;
+  padding: 20px;
 }
 
-.card-lead {
+#card-lead {
   font-size: 40px;
 }
 
