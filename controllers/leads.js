@@ -44,8 +44,24 @@ function show(req, res) {
       })
 }
 
+function flipStatus(req, res) {
+    Lead.findById(req.params.id)
+    .then(lead => {
+        lead.lead = !lead.lead
+        lead.save()
+        .then(() => {
+            res.redirect(`/leads/${lead._id}`)
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/leads")
+      })
+}
+
 export {
     index,
     create,
-    show
+    show,
+    flipStatus
 }

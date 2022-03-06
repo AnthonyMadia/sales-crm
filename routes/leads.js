@@ -12,6 +12,9 @@ router.get('/:id', leadsCtrl.show)
 // POST - localhost:3000/leads
 router.post('/', isLoggedIn, leadsCtrl.create)
 
+// PATCH - localhost:3000/leads/:id/flipstatus
+router.patch('/:id/flipstatus', isLoggedIn, leadsCtrl.flipStatus)
+
 export {
     router
   }
