@@ -60,7 +60,17 @@ function flipStatus(req, res) {
 }
 
 function edit(req, res) {
-    console.log('hello there edit page')
+    Lead.findById(req.params.id)
+    .then(lead => {
+        res.render('leads/edit', {
+            lead,
+            title: "Edit Lead"
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/leads")
+      })
 }
 
 export {
