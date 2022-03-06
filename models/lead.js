@@ -3,9 +3,15 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 const leadSchema = new Schema({
-    name: String,
+    name: {
+        type: String,
+        required: true
+    },
     email: String,
-    lead: Boolean,
+    lead: {
+        type: Boolean,
+        required: true
+    },
     linkedin: String,
     lastTouch: Date,
     notes: String,
@@ -17,3 +23,5 @@ const Lead = mongoose.model('Lead', leadSchema)
 export {
     Lead
 }
+
+// Fix error handling when user does not type in name or lead status

@@ -15,7 +15,7 @@ function index(req, res) {
       })
 }
 
-function createLead(req, res) {
+function create(req, res) {
     req.body.owner = req.user.profile._id
     req.body.lead = !!req.body.lead
     Lead.create(req.body)
@@ -30,5 +30,5 @@ function createLead(req, res) {
 
 export {
     index,
-    createLead as create
+    create
 }
