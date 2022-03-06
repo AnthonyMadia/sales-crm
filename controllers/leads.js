@@ -79,7 +79,7 @@ function update(req, res) {
         req.body.lead = !!req.body.lead
         lead.updateOne(req.body, {new: true})
         .then(()=> {
-          res.redirect(`/leads/${req.params.id}`)
+          res.redirect(`/leads/${lead._id}`)
         })
       } else {
         throw new Error ('🚫 Not authorized 🚫')
@@ -91,11 +91,30 @@ function update(req, res) {
     })
   }
 
+  function deleteLead(req, res) {
+    Lead.findById(req.params.id)
+    .then(lead => {
+      if (lead.owner.equals(req.user.profile._id)) {
+        lead.delete()
+        .then(() => {
+          res.redirect('/leads')
+        })
+      } else {
+        throw new Error ('🚫 Not authorized 🚫')
+      }   
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/leads')
+    })
+  }
+
 export {
     index,
     create,
     show,
     flipStatus,
     edit,
-    update
+    update,
+    deleteLead as delete
 }

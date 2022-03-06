@@ -22,6 +22,9 @@ router.put('/:id', isLoggedIn, leadsCtrl.update)
 // PATCH - localhost:3000/leads/:id/flipstatus
 router.patch('/:id/flipstatus', isLoggedIn, leadsCtrl.flipStatus)
 
+// DELETE - localhost:3000/leads/:id
+router.delete('/:id', isLoggedIn, leadsCtrl.delete)
+
 export {
     router
   }
