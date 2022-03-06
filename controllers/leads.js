@@ -6,11 +6,20 @@ function index(req, res) {
     .then(leads => {
         res.render('leads/index', {
             leads,
-            title: "All Leads"
+            title: "All Leads 🗣️"
         })
     })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/leads")
+      })
+}
+
+function createLead(req, res) {
+    console.log('hey')
 }
 
 export {
-    index
+    index,
+    createLead as create
 }
