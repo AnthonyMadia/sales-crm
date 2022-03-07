@@ -1,5 +1,6 @@
 .hero {
     height: 100vh;
+    background: url('../assets/backgroundphoto.jpeg');
     display: grid;
     justify-content: center;
     align-items: center;
@@ -21,5 +22,9 @@
             height: 120%;
             width: 50%;
         }
+    }
+
+    .continer {
+        background: url('../assets/backgroundphoto.jpeg');
     }
 }

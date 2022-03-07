@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Trykker&display=swap");
 .hero {
   height: 100vh;
+  background: url("../assets/backgroundphoto.jpeg");
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
@@ -28,6 +29,10 @@
   top: 0;
   height: 120%;
   width: 50%;
+}
+
+.hero .continer {
+  background: url("../assets/backgroundphoto.jpeg");
 }
 
 .main-header {
