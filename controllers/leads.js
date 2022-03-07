@@ -91,23 +91,38 @@ function update(req, res) {
     })
   }
 
-  function deleteLead(req, res) {
-    Lead.findById(req.params.id)
-    .then(lead => {
-      if (lead.owner.equals(req.user.profile._id)) {
-        lead.delete()
-        .then(() => {
-          res.redirect('/leads')
+function deleteLead(req, res) {
+  Lead.findById(req.params.id)
+  .then(lead => {
+    if (lead.owner.equals(req.user.profile._id)) {
+      lead.delete()
+      .then(() => {
+        res.redirect('/leads')
+      })
+    } else {
+      throw new Error ('🚫 Not authorized 🚫')
+    }   
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/leads')
+  })
+}
+
+function createProduct(req, res) {
+  Lead.findById(req.params.id)
+  .then(lead => {
+    lead.products.push(req.body)
+    lead.save()
+    .then(() => {
+      res.redirect(`/leads/${lead._id}`)
         })
-      } else {
-        throw new Error ('🚫 Not authorized 🚫')
-      }   
     })
     .catch(err => {
       console.log(err)
-      res.redirect('/leads')
-    })
-  }
+      res.redirect("/leads")
+  })  
+}
 
 export {
     index,
@@ -116,5 +131,6 @@ export {
     flipStatus,
     edit,
     update,
-    deleteLead as delete
+    deleteLead as delete,
+    createProduct
 }

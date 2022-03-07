@@ -15,6 +15,8 @@ router.get('/:id/edit', isLoggedIn, leadsCtrl.edit)
 
 // POST - localhost:3000/leads
 router.post('/', isLoggedIn, leadsCtrl.create)
+// POST - localhost:3000/leads/:id/products
+router.post('/:id/products', isLoggedIn, leadsCtrl.createProduct)
 
 // PUT - localhost:3000/leads/:id
 router.put('/:id', isLoggedIn, leadsCtrl.update)

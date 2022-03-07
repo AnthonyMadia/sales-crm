@@ -36,6 +36,44 @@
         <button class="btn btn-danger" type="submit">Delete</button>
       </form>
     <% } %>
+
+    <h2>Products</h2>
+  <form 
+    id="add-product-form"
+    action="/leads/<%= lead._id %>/products"
+    method="POST"
+  >
+    <label for="name">Product: </label>
+    <input  type="text" name="name">
+    <label for="price">Price:</label>
+    <input type="text" name="price">
+    <button type="submit" class="btn btn-primary">Add Product</button>
+  </form>
+  <% if (lead.products.length) { %>
+    <div id="product-table">
+      <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>  $ Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% lead.products.forEach(function(product) { %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.price %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h3>No Products Created</h3>
+  <% } %>
+    </div>
+    
+
+
 </section>
 
 <%- include('../partials/footer') %>
