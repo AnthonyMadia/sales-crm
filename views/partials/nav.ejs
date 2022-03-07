@@ -4,18 +4,29 @@
   <% } %>
 </head>
 <body>
-  <nav>
+  <nav class="main-header">
     <% if (user) { %>
-      <div class="dropdown">
-        <button class="dropbtn"><i class="fa-solid fa-caret-down"></i> Browse</button>
-        <div class="dropdown-content">
-          <a href="/profiles">Profiles</a>
-          <a href="/leads">All Leads</a>
-        </div>
+      <div class="logo">
+        <a href="#">LOGO</a>
       </div>
-      <a href="/auth/logout">
-        <button type="submit" class="btn btn-primary" id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
-      </a>
+      <input type="checkbox" class="menu-btn" id="menu-btn">
+      <label for="menu-btn" class="menu-btn">
+        <span class="menu-icon__line"></span>
+      </label>
+
+      <ul class="nav-links">
+        <li class="nav-link">
+          <a href="/leads">LEADS</a>
+        </li>
+        <li class="nav-link">
+          <a href="/profiles">PROFILES</a>
+        </li>
+        <li class="nav-link">
+          <a href="/auth/logout">
+            <button type="submit" class="btn btn-primary" id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i>LOGOUT</button>
+          </a>
+        </li>
+      </ul>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">

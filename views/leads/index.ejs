@@ -1,10 +1,17 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<section>
+<section class="hero">
     <% if (user) { %>
         <h2><i class="fa-solid fa-address-book"></i> Add Lead</h2>
-     <form class="card text-white bg-success mb-3" style="max-width: 35rem;" action="/leads" method="POST" autocomplete="off">
+        <form 
+            class="card text-white bg-success mb-3" 
+            style="max-width: 35rem;" 
+            action="/leads" 
+            method="POST" 
+            autocomplete="off"
+            class="container"
+        >
             <label class="card-header">
                 <i class="fa-solid fa-file-signature"></i>
                 Name:
@@ -47,7 +54,7 @@
     <% } %>
     <h1>Leads! 🗣️</h1>
     <% leads.forEach(lead => { %>
-     <li>
+     <li class="container">
          <a href="/leads/<%= lead._id %>"><%= lead.name %></a>
          <%= lead.lead ? "is a lead" : "is not a lead" %>
     </li>
