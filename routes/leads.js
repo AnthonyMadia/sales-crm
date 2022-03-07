@@ -26,6 +26,8 @@ router.patch('/:id/flipstatus', isLoggedIn, leadsCtrl.flipStatus)
 
 // DELETE - localhost:3000/leads/:id
 router.delete('/:id', isLoggedIn, leadsCtrl.delete)
+// DELETE - localhost:3000/leads/:id/products
+router.delete('/:leadId/products/:prodId', isLoggedIn, leadsCtrl.deleteProduct)
 
 export {
     router

@@ -124,6 +124,21 @@ function createProduct(req, res) {
   })  
 }
 
+function deleteProduct(req, res) {
+  Lead.findById(req.params.leadId)
+  .then(lead =>{
+    lead.products.remove({_id: req.params.prodId})
+    lead.save()
+    .then(() => {
+      res.redirect(`/leads/${lead._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/leads")
+  }) 
+}
+
 export {
     index,
     create,
@@ -132,5 +147,6 @@ export {
     edit,
     update,
     deleteLead as delete,
-    createProduct
+    createProduct,
+    deleteProduct
 }

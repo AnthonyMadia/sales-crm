@@ -12,32 +12,32 @@
         <p class="card-text"><i class="fa-brands fa-linkedin"></i>  LinkedIn: <a href="https://www.linkedin.com/in/<%= lead.linkedin %> "><%= lead.linkedin %></a></p>
         <p class="card-text"><i class="fa-solid fa-calendar-week"></i> Last Touch: <%= lead.lastTouch %></p>
         <p class="card-text"><i class="fa-solid fa-note-sticky"></i> Notes: <%= lead.notes %></p>
+        <% if (user) { %>
+          <form 
+            action="/leads/<%= lead._id %>/flipstatus?_method=PATCH" 
+            method="POST"
+          >
+            <button class="btn btn-warning" type="submit">
+              <i class="fa-solid fa-person"></i>
+              Change Lead Status
+            </button>
+          </form>
+        <% } %>
+        <% if (lead.owner.equals(user?.profile._id)) { %>
+          <form 
+            action="/leads/<%= lead._id %>/edit" 
+            method="GET"
+          >
+            <button class="btn btn-dark">Edit Lead</button>
+          </form>
+          <form action="/leads/<%= lead._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger" type="submit">Delete</button>
+          </form>
+        <% } %>
       </div>
     </div>
-    <% if (user) { %>
-      <form 
-        action="/leads/<%= lead._id %>/flipstatus?_method=PATCH" 
-        method="POST"
-      >
-        <button class="btn btn-warning" type="submit">
-          <i class="fa-solid fa-person"></i>
-          Change Lead Status
-        </button>
-      </form>
-    <% } %>
-    <% if (lead.owner.equals(user?.profile._id)) { %>
-      <form 
-        action="/leads/<%= lead._id %>/edit" 
-        method="GET"
-      >
-        <button class="btn btn-dark">Edit Lead</button>
-      </form>
-      <form action="/leads/<%= lead._id %>?_method=DELETE" method="POST">
-        <button class="btn btn-danger" type="submit">Delete</button>
-      </form>
-    <% } %>
 
-    <h2>Products</h2>
+  <h2>Add Products</h2>
   <form 
     id="add-product-form"
     action="/leads/<%= lead._id %>/products"
@@ -52,10 +52,11 @@
   <% if (lead.products.length) { %>
     <div id="product-table">
       <table>
-      <thead>
-        <tr>
+        <thead>
+        <tr id="tr-product">
           <th>Product</th>
           <th>  $ Price</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -63,17 +64,27 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.price %></td>
+            <td>
+              <% if (user) { %>
+                <form 
+                  action="/leads/<%= lead._id %>/products/<%= product._id %>?_method=DELETE" 
+                  method="POST"
+                >
+                  <button class="btn btn-dark" type="submit">
+                    X
+                  </button>
+                </form>
+              <% } %>
+              </td>
           </tr>
-        <% }) %>
+          <% }) %>
       </tbody>
     </table>
-  <% } else { %>
+  </div>
+    <% } else { %>
     <h3>No Products Created</h3>
   <% } %>
-    </div>
     
-
-
 </section>
 
 <%- include('../partials/footer') %>

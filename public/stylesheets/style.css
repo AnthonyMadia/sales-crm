@@ -189,6 +189,10 @@ form {
   margin: auto;
 }
 
+#tr-product{
+  font-size: 20px;
+}
+
 /* Dropdown Button */
 .dropbtn {
   background-color: #04AA6D;
