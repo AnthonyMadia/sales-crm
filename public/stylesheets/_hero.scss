@@ -1,11 +1,15 @@
 .hero {
-    height: 100vh;
-    background: url('../assets/backgroundphoto.jpeg');
+    height: 120vh;
     display: grid;
     justify-content: center;
     align-items: center;
     padding: 0 10vw;
     color: red;
+
+    h2 {
+        margin-top: 140px;
+        margin-bottom: 0px;
+    }
 
     .card {
         position: relative;
@@ -22,9 +26,5 @@
             height: 120%;
             width: 50%;
         }
-    }
-
-    .continer {
-        background: url('../assets/backgroundphoto.jpeg');
     }
 }

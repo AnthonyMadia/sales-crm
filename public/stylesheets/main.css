@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Trykker&display=swap");
 .hero {
-  height: 100vh;
-  background: url("../assets/backgroundphoto.jpeg");
+  height: 120vh;
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
@@ -12,6 +11,11 @@
           align-items: center;
   padding: 0 10vw;
   color: red;
+}
+
+.hero h2 {
+  margin-top: 140px;
+  margin-bottom: 0px;
 }
 
 .hero .card {
@@ -31,10 +35,6 @@
   width: 50%;
 }
 
-.hero .continer {
-  background: url("../assets/backgroundphoto.jpeg");
-}
-
 .main-header {
   position: fixed;
   display: -webkit-box;
@@ -49,7 +49,6 @@
   height: 65px;
   width: 100vw;
   padding: 0 10vw;
-  color: black;
   z-index: 1;
 }
 
@@ -147,6 +146,7 @@ body {
 }
 
 .card {
+  margin: 100px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
