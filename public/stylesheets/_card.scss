@@ -1,0 +1,30 @@
+.card {
+    margin: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .card-header {
+        font-size: 40px;
+    }
+
+    form {
+        margin-bottom: 20px;
+    }
+}
+
+#main-card {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+}
+
+#product-table {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    font-size: 30px;
+}

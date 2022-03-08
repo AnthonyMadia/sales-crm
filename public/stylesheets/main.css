@@ -116,35 +116,6 @@
   display: none;
 }
 
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Oswald', sans-serif;
-  width: 80%;
-  margin: 2rem auto;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-}
-
-.container {
-  width: 80%;
-  margin: 2rem auto;
-}
-
-.container label {
-  margin: 1rem 0;
-}
-
 .card {
   margin: 100px;
   -webkit-box-pack: center;
@@ -187,5 +158,34 @@ body {
   text-align: center;
   margin: auto;
   font-size: 30px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  width: 80%;
+  margin: 2rem auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.container {
+  width: 80%;
+  margin: 2rem auto;
+}
+
+.container label {
+  margin: 1rem 0;
 }
 /*# sourceMappingURL=main.css.map */
