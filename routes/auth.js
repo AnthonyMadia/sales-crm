@@ -9,7 +9,7 @@ router.get(
 )
 
 router.get(
-  'https://sales-crm-men-app.herokuapp.com/google/oauth2callback',
+  '/google/oauth2callback',
   passport.authenticate('google', {
     successRedirect: '/leads',
     failureRedirect: '/auth/google',
