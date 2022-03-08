@@ -1,4 +1,5 @@
 import mongoose from "mongoose"
+import moment from "moment"
 
 const Schema = mongoose.Schema
 
@@ -21,7 +22,10 @@ const leadSchema = new Schema({
         required: true
     },
     linkedin: String,
-    lastTouch: Date,
+    lastTouch: {
+        type: Date,
+        
+    },
     notes: String,
     products: [productSchema],
     owner: {type: Schema.Types.ObjectId, ref: "Profile"}
