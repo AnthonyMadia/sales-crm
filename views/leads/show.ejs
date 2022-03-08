@@ -55,11 +55,11 @@
         <thead>
         <tr id="tr-product">
           <th>Product</th>
-          <th>  $ Price</th>
+          <th>   $Price</th>
           <th></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="product-table">
         <% lead.products.forEach(function(product) { %>
           <tr>
             <td><%= product.name %></td>
