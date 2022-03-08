@@ -117,7 +117,7 @@
 }
 
 .card {
-  margin: 100px;
+  margin: 40px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -127,7 +127,7 @@
   text-align: center;
 }
 
-.card .card-header {
+.card .card-lead {
   font-size: 40px;
 }
 
