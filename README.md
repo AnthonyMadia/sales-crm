@@ -1,5 +1,5 @@
-# Sales CRM CRUD App
-## 💥  Getting Started
+# Simple Sales CRUD App
+## 💥 Getting Started
 
 🗣️ This application is a simple CRUD app that allows a user to sign in using Google OAuth and create, update, and delete leads like a salesperson would. 
 
