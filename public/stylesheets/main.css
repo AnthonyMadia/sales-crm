@@ -188,4 +188,13 @@ body {
 .container label {
   margin: 1rem 0;
 }
+
+a {
+  color: red;
+}
+
+nav button {
+  background: #00d4ff;
+  background: radial-gradient(circle, #00d4ff 8%, #020024 23%, #097879 23%, #00d4ff 47%, #00acd5 59%);
+}
 /*# sourceMappingURL=main.css.map */

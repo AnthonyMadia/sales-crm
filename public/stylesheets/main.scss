@@ -27,3 +27,15 @@ body {
     }
     
 }
+
+a {
+    color: red;
+}
+
+nav {
+    button {
+        background: rgb(0,212,255);
+        background: radial-gradient(circle, rgba(0,212,255,1) 8%, rgba(2,0,36,1) 23%, rgba(9,120,121,1) 23%, rgba(0,212,255,1) 47%, rgba(0,172,213,1) 59%);
+    }
+}
+

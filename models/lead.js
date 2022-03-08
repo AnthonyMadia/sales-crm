@@ -13,7 +13,7 @@ const leadSchema = new Schema({
         required: true
     },
     phone: {
-        type: Number,
+        type: String,
     },
     email: String,
     lead: {
