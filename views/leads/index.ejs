@@ -15,46 +15,71 @@
             <label class="card-header">
                 <i class="fa-solid fa-file-signature"></i>
                 Name:
-                <input type="text" name="name" >
-                </label>
+                <input 
+                    type="text" 
+                    name="name"
+                >
+            </label>
             <label class="card-header">
                 <i class="fa-solid fa-phone"></i>
                 Phone: 
-                <input type="tel" id="phone" name="phone"
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                name="phone" maxlength="13">
-                </label>
+                <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    name="phone" 
+                    maxlength="13"
+                >
+             </label>
             <label class="card-header">
                 <i class="fa-solid fa-at"></i>
                 eMail:
-                <input type="email" name="email">
-                </label>
+                <input 
+                    type="email" 
+                    name="email"
+                >
+            </label>
             <label class="card-header">
                 <i class="fa-solid fa-location-crosshairs"></i>
                 Lead Status: 
-                <input type="checkbox" name="lead">
-                </label>
+                <input 
+                    type="checkbox" 
+                    name="lead"
+                >
+            </label>
             <label class="card-header">
                 <i class="fa-brands fa-linkedin"></i>  
                 Linkedin:
-                <input  type="text" name="linkedin">
+                <input 
+                    type="text" 
+                    name="linkedin"
+                >
             </label>
             <label class="card-header">
                 <i class="fa-solid fa-calendar-week"></i>
                 Last Touch: 
-                <input type="date" name="date">
+                <input 
+                    type="date" 
+                    name="date"
+                >
             </label>
             <label class="card-header">
                 <i class="fa-solid fa-note-sticky"></i>
             Notes:
-                <textarea class="card-body" name="notes" cols="28" rows="3"></textarea>
+                <textarea 
+                    class="card-body" 
+                    name="notes" 
+                    cols="28" 
+                    rows="3"
+                ></textarea>
             </label>
             <button class="btn btn-danger">Add Lead </button>
         </form>
     <% } %>
     <h1>Leads! 🗣️</h1>
     <% leads.forEach(lead => { %>
-     <li class="container">
+     <li class="leads-container">
          <a href="/leads/<%= lead._id %>"><%= lead.name %></a>
          <%= lead.lead ? "is a lead" : "is not a lead" %>
     </li>

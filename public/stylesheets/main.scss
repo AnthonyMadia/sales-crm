@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Trykker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import 'hero';
 @import 'header';
 
@@ -9,7 +9,7 @@
 }
 
 body {
-    font-family: 'Trykker', 'serif';
+    font-family: 'Oswald', sans-serif;
     width: 80%;
     margin: 2rem auto;
     justify-content: center;
@@ -34,3 +34,10 @@ body {
     text-align: center;
 }
 
+#main-card {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+}
