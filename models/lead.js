@@ -1,6 +1,8 @@
 import mongoose from "mongoose"
 import moment from "moment"
 
+
+
 const Schema = mongoose.Schema
 
 const productSchema = new Schema({
@@ -24,7 +26,9 @@ const leadSchema = new Schema({
     linkedin: String,
     lastTouch: {
         type: Date,
-        
+        default: () => {
+            moment().format('MMMM Do YYYY, h:mm:ss a');
+        }
     },
     notes: String,
     products: [productSchema],
@@ -36,5 +40,3 @@ const Lead = mongoose.model('Lead', leadSchema)
 export {
     Lead
 }
-
-// Fix error handling when user does not type in name or lead status
