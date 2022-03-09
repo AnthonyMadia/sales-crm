@@ -24,7 +24,7 @@ import { router as profilesRouter } from './routes/profiles.js'
 // create the express app
 const app = express()
 
-// view engine setup
+// view engine setup 
 app.set(
   'views',
   path.join(path.dirname(fileURLToPath(import.meta.url)), 'views')

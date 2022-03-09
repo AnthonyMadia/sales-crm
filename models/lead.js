@@ -26,9 +26,7 @@ const leadSchema = new Schema({
     linkedin: String,
     lastTouch: {
         type: Date,
-        default: () => {
-            moment().format('MMMM Do YYYY, h:mm:ss a');
-        }
+        
     },
     notes: String,
     products: [productSchema],
