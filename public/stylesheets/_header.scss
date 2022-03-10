@@ -17,48 +17,17 @@
     .nav-links {
         display: flex;
         list-style: none;
-
+        border-radius: 40%;
         .nav-link {
 
             a {
                 margin: .2rem;
                 padding: 1rem .5rem;
+                
             }
             a:hover {
                 background: rgba($color: rgb(194, 22, 22), $alpha: 0.2);
-            }
-        }
-    }
-    .menu-icon {
-        position: relative;
-        padding: 26px 10px;
-        cursor: pointer;
-        z-index: 1;
-        display: none;
-
-        &__line {
-            display: block;
-            position: relative;
-            background: black;
-            height: 2px;
-            width: 20px;
-            border-radius: 4px;
-
-            &::before, &::after {
-                content: '';
-                position: absolute;
-                height: 100%;
-                width: 100%;
-                border-radius: 4px;
-                background: black;
-                transition: background .8s ease;
-            }
-
-            &::before {
-                transform: translateY(-5px);
-            }
-            &::after {
-                transform: translateY(5px);
+                
             }
         }
     }
