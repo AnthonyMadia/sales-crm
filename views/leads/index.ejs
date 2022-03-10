@@ -18,6 +18,7 @@
                 <input 
                     type="text" 
                     name="name"
+                    required
                 >
             </label>
             <label class="card-header">
@@ -27,9 +28,9 @@
                     type="tel" 
                     id="phone" 
                     name="phone"
-                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$"
                     name="phone" 
-                    maxlength="13"
+                    
                     placeholder="123-456-7890"
                 >
              </label>
@@ -63,6 +64,7 @@
                 <input 
                     type="date" 
                     name="lastTouch"
+                    pattern=""
                 >
                 >
             </label>

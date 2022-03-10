@@ -26,9 +26,8 @@
                 type="tel" 
                 id="phone" 
                 name="phone"
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$"
                 name="phone" 
-                maxlength="13"
                 value="<%= lead.phone %>"
             >
             </label>
