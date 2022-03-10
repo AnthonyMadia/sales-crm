@@ -37,3 +37,5 @@
 👷 Add Light/Dark mode
 
 👷 Make CSS more mobile responsive
+
+👷 Randomly generate avatars with Dicebear package
