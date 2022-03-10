@@ -3,17 +3,12 @@
     <link rel="stylesheet" href="/stylesheets/siwg.css">
   <% } %>
 </head>
-<body>
+<body id="body">
   <nav class="main-header">
     <% if (user) { %>
       <div class="logo">
         <a href="/leads"><i class="fa-solid fa-person-running"></i></a>
       </div>
-      <input type="checkbox" class="menu-btn" id="menu-btn">
-      <label for="menu-btn" class="menu-btn">
-        <span class="menu-icon__line"></span>
-      </label>
-
       <ul class="nav-links">
         <li class="nav-link">
           <a href="/leads">LEADS</a>
