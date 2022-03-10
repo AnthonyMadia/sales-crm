@@ -36,7 +36,6 @@
 }
 
 .main-header {
-  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,15 +45,16 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
   height: 65px;
   width: 100%;
-  padding: 0 8em;
+  position: fixed;
+  padding: 0 15em;
   z-index: 1;
 }
 
 .main-header a {
   text-decoration: none;
-  color: inherit;
   text-transform: uppercase;
 }
 
@@ -63,6 +63,7 @@
   display: -ms-flexbox;
   display: flex;
   list-style: none;
+  border-radius: 40%;
 }
 
 .main-header .nav-links .nav-link a {
@@ -71,49 +72,13 @@
 }
 
 .main-header .nav-links .nav-link a:hover {
-  background: rgba(194, 22, 22, 0.2);
+  background: #00ff26;
+  border-radius: 30%;
 }
 
-.main-header .menu-icon {
-  position: relative;
-  padding: 26px 10px;
-  cursor: pointer;
-  z-index: 1;
-  display: none;
-}
-
-.main-header .menu-icon__line {
-  display: block;
-  position: relative;
-  background: black;
-  height: 2px;
-  width: 20px;
-  border-radius: 4px;
-}
-
-.main-header .menu-icon__line::before, .main-header .menu-icon__line::after {
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  border-radius: 4px;
-  background: black;
-  -webkit-transition: background .8s ease;
-  transition: background .8s ease;
-}
-
-.main-header .menu-icon__line::before {
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
-}
-
-.main-header .menu-icon__line::after {
-  -webkit-transform: translateY(5px);
-          transform: translateY(5px);
-}
-
-.main-header .menu-btn {
-  display: none;
+.main-header .btn {
+  border-radius: 20%;
+  color: #ffee00;
 }
 
 .card {
@@ -194,11 +159,12 @@ body {
 }
 
 a {
-  color: red;
+  color: orange;
+  font-size: 25px;
 }
 
 nav button {
-  background: #00d4ff;
+  background: #55daf5;
   background: radial-gradient(circle, #00d4ff 8%, #020024 23%, #097879 23%, #00d4ff 47%, #00acd5 59%);
 }
 /*# sourceMappingURL=main.css.map */

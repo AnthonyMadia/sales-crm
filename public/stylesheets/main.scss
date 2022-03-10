@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-@import 'hero';
-@import 'header';
-@import 'card';
+@import "./variables";
+@import './hero';
+@import './header';
+@import './card';
+
+
 
 * {
     box-sizing: border-box;
@@ -33,12 +36,13 @@ body {
 }
 
 a {
-    color: red;
+    color: $textColor;
+    font-size: 25px;
 }
 
 nav {
     button {
-        background: rgb(0,212,255);
-        background: radial-gradient(circle, rgba(0,212,255,1) 8%, rgba(2,0,36,1) 23%, rgba(9,120,121,1) 23%, rgba(0,212,255,1) 47%, rgba(0,172,213,1) 59%);
+        background: $primaryButton;
+        background: $buttonRadial
     }
 }

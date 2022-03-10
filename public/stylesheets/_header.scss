@@ -1,16 +1,18 @@
+$hoverColor: rgba($color: rgb(0, 255, 38), $alpha: 1.4);
+
 .main-header {
-    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
     height: 65px;
     width: 100%;
-    padding: 0 8em;
+    position: fixed;
+    padding: 0 15em;
     z-index: 1;
 
     a {
         text-decoration: none;
-        color: inherit;
         text-transform: uppercase;
     }
 
@@ -19,20 +21,19 @@
         list-style: none;
         border-radius: 40%;
         .nav-link {
-
             a {
                 margin: .2rem;
                 padding: 1rem .5rem;
-                
             }
             a:hover {
-                background: rgba($color: rgb(194, 22, 22), $alpha: 0.2);
-                
+                background: $hoverColor;
+                border-radius: 30%;
             }
         }
     }
 
-    .menu-btn {
-        display: none;
+    .btn {
+        border-radius: 20%;
+        color: rgb(255, 238, 0);
     }
 }
