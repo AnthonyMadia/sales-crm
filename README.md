@@ -37,5 +37,3 @@
 👷 Add Light/Dark mode
 
 👷 Make CSS more mobile responsive
-
-\
