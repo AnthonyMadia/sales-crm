@@ -1,4 +1,4 @@
-# Simple Sales CRUD App
+# Sales CRM - CRUD App
 ## 💥 Getting Started 
 
 [🔥 Link to App](https://sales-crm-men-app.herokuapp.com/)
