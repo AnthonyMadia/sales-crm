@@ -10,7 +10,7 @@
         <p class="card-text"><i class="fa-solid fa-at"></i> eMail: <%= lead.email %></p>
         <p class="card-text"><i class="fa-solid fa-location-crosshairs"></i> Lead Status: <%= lead.lead ? "is a lead 👍" : "is not a lead 👎" %></p>
         <p class="card-text"><i class="fa-brands fa-linkedin"></i>  LinkedIn: <a href="https://www.linkedin.com/in/<%= lead.linkedin %> " target="_blank"><%= lead.linkedin %></a></p>
-        <p class="card-text"><i class="fa-solid fa-calendar-week"></i> Last Touch: <%= lead.lastTouch %></p>
+        <p class="card-text"><i class="fa-solid fa-calendar-week"></i> Last Touch: <%= new Date(lead.lastTouch).toDateString() %></p>
         <p class="card-text"><i class="fa-solid fa-note-sticky"></i> Notes: <%= lead.notes %></p>
         <% if (user) { %>
           <form 
